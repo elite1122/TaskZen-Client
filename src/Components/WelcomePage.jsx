@@ -5,20 +5,10 @@ import { Link } from "react-router-dom";
 export default function WelcomePage() {
     return (
         <div className="min-h-screen">
-            {/* Navbar */}
-            <nav className=" bg-white shadow-md sticky top-0 z-50">
-                <div className="flex justify-between items-center p-6 max-w-[1440px] mx-auto">
-                    <Link to="/">
-                        <h1 className="text-4xl font-extrabold text-blue-600">TaskZen</h1>
-                    </Link>
-                    <div className="space-x-4">
-                        <button class="btn btn-warning">Get Started</button>
-                    </div>
-                </div>
-            </nav>
+
 
             {/* Hero Section */}
-            <section className="w-11/12 mx-auto max-w-[1440px] flex flex-col items-center justify-center text-center px-6 py-24 bg-gray-100 min-h-[calc(100vh-80px)]">
+            <section className="flex flex-col items-center justify-center text-center py-24 bg-gray-100 min-h-[calc(100vh-80px)] rounded-2xl">
                 <motion.h2
                     className="text-5xl font-extrabold text-gray-900 mb-6 tracking-wide leading-tight"
                     initial={{ opacity: 0, y: -20 }}
@@ -44,14 +34,18 @@ export default function WelcomePage() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1.2 }}
                 >
-                    <button className="btn btn-warning bg-green-500 border-none">Sign In</button>
-                    <button className="btn btn-warning">Sign Up</button>
+                    <Link to="signin">
+                        <button className="btn btn-info">Sign In</button>
+                    </Link>
+                    <Link to="signup">
+                        <button className="btn btn-warning">Sign Up</button>
+                    </Link>
                 </motion.div>
             </section>
 
             {/* Features Section */}
-            <section className="py-16 text-center w-11/12 mx-auto max-w-[1440px]">
-                <h3 className="text-3xl font-bold text-gray-800 mb-6">Why Choose TaskZen?</h3>
+            <section className="py-16 text-center">
+                <h3 className="text-2xl md:text-4xl font-bold text-gray-800 mb-6">Why Choose TaskZen?</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="p-6 bg-gray-100 rounded-2xl shadow-md hover:shadow-lg transition">
                         <h4 className="text-xl font-bold text-blue-600 mb-2">Organize Effortlessly</h4>

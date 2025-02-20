@@ -1,11 +1,12 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import WelcomePage from '../Components/WelcomePage';
+import NavBar from '../Components/NavBar';
 
 const Main = () => {
     return (
         <div className=''>
-            <WelcomePage></WelcomePage>
+            <NavBar></NavBar>
             <section className='w-11/12 max-w-[1440px] mx-auto'>
                 <Outlet></Outlet>
             </section>
