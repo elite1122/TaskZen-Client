@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function WelcomePage() {
     return (
@@ -7,7 +8,9 @@ export default function WelcomePage() {
             {/* Navbar */}
             <nav className=" bg-white shadow-md sticky top-0 z-50">
                 <div className="flex justify-between items-center p-6 max-w-[1440px] mx-auto">
-                    <h1 className="text-4xl font-extrabold text-blue-600">TaskZen</h1>
+                    <Link to="/">
+                        <h1 className="text-4xl font-extrabold text-blue-600">TaskZen</h1>
+                    </Link>
                     <div className="space-x-4">
                         <button class="btn btn-warning">Get Started</button>
                     </div>
