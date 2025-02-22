@@ -14,13 +14,12 @@ const NavBar = () => {
             {user && (
                 <>
                     <Link to="/addTask">
-                        <button className="btn btn-outline text-base"><IoMdAddCircle />Add Task</button>
+                        <button className="btn btn-outline text-base"><IoMdAddCircle /> Add Task</button>
                     </Link>
                     <Link to="/manageTask">
                         <button className="btn btn-outline text-base">Manage Task</button>
                     </Link>
                     <div className="relative group flex items-center gap-2">
-                        
                         <button onClick={logOut} className="btn btn-error text-white text-base"><IoMdExit /> Logout</button>
                     </div>
                 </>
@@ -38,9 +37,7 @@ const NavBar = () => {
                 {/* Dark Mode Toggle */}
                 <div className="flex items-center space-x-4">
                     <label className="swap swap-rotate">
-                        {/* Hidden Checkbox */}
                         <input type="checkbox" className="theme-controller" />
-
                         {/* Sun Icon */}
                         <svg
                             className="swap-off h-8 w-8 fill-current"
@@ -65,7 +62,9 @@ const NavBar = () => {
                         {navOptions}
                     </div>
 
-                    <div tabIndex="0" role="button" className="btn btn-ghost btn-circle avatar group">
+                    {/* User Avatar */}
+                    {user && (
+                        <div tabIndex="0" role="button" className="btn btn-ghost btn-circle avatar group">
                             <div className="w-10 rounded-full">
                                 <img referrerPolicy="no-referrer" alt="User Avatar" src={user.photoURL} />
                             </div>
@@ -74,6 +73,7 @@ const NavBar = () => {
                                 {user.displayName}
                             </span>
                         </div>
+                    )}
 
                     {/* Mobile Menu */}
                     <div className="lg:hidden dropdown dropdown-end">
