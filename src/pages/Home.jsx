@@ -47,14 +47,14 @@ export default function Home() {
     const { data: tasks = [], refetch } = useQuery({
         queryKey: ['tasks', user?.email],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/tasks?email=${user?.email}`);
+            const res = await axios.get(`https://task-zen-server-delta.vercel.app/tasks?email=${user?.email}`);
             return Array.isArray(res.data) ? res.data : [];
         },
         enabled: !!user?.email,
     });
 
     const updateTaskMutation = useMutation({
-        mutationFn: async (updates) => axios.patch(`http://localhost:5000/tasks/reorder`, updates),
+        mutationFn: async (updates) => axios.patch(`https://task-zen-server-delta.vercel.app/tasks/reorder`, updates),
         onSuccess: () => queryClient.invalidateQueries(['tasks']),
     });
 

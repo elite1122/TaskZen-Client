@@ -15,7 +15,7 @@ const ManageTask = () => {
   const { data: tasks = [] } = useQuery({
     queryKey: ["tasks", user?.email],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/tasks?email=${user?.email}`);
+      const res = await axios.get(`https://task-zen-server-delta.vercel.app/tasks?email=${user?.email}`);
       return res.data;
     },
     enabled: !!user?.email,
@@ -24,7 +24,7 @@ const ManageTask = () => {
   // Mutation for updating task
   const updateTaskMutation = useMutation({
     mutationFn: async (updatedTask) => {
-      return axios.patch(`http://localhost:5000/tasks/${updatedTask._id}`, updatedTask);
+      return axios.patch(`https://task-zen-server-delta.vercel.app/tasks/${updatedTask._id}`, updatedTask);
     },
     onSuccess: () => {
       queryClient.invalidateQueries(["tasks"]);
@@ -36,7 +36,7 @@ const ManageTask = () => {
   // Mutation for deleting a task
   const deleteTaskMutation = useMutation({
     mutationFn: async (taskId) => {
-      return axios.delete(`http://localhost:5000/tasks/${taskId}`, {
+      return axios.delete(`https://task-zen-server-delta.vercel.app/tasks/${taskId}`, {
         data: { email: user?.email },
       });
     },
