@@ -95,7 +95,7 @@ export default function Home() {
     };
 
     return (
-        <div className="p-6">
+        <div className="p-6 min-h-screen">
             <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
                 <main className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {categoryList.map((category) => (
