@@ -1,11 +1,8 @@
-# Go Marathon BD (Marathon Management System) Website Design Using Core React, Tailwind CSS, DaisyUI & MongoDB
+# TaskZen (Task Management System) Website Design Using Core React, Tailwind CSS, DaisyUI & MongoDB
 
 ## Project Theme: Marathon Management System 🌟
-The Marathon Management System is a platform that helps organize marathon events
- by connecting event organizers with participants. Users can create marathons, sign up
- for events, and manage their registrations through a personal dashboard. This project
- offers practical experience in building full-stack applications, setting up user login,
- managing data, and connecting with a secure database.
+TaskZen is a Task Management Application where users can add, edit, delete, and reorder tasks using a drag-and-drop interface. Tasks will be categorized into three sections: To-Do, In Progress, and Done. Changes must be saved instantly to the database to maintain persistence.
+
 
 ## 🛠️ Technologies Used
 ### Frontend:
@@ -35,25 +32,11 @@ The Marathon Management System is a platform that helps organize marathon events
 - **Description:** User authentication using Firebase, ensuring secure access and management of personal accounts.
 - **Sign-In Options:** Includes email/password login and Google authentication.
 
-### 🎯 **Event Management**
-- **Create Marathons:** Organizers can set up marathons by providing event details, registration dates, and more.
-- **Browse Events:** Participants can explore upcoming marathons and view detailed event information.
-- **Manage Registrations:** Users can register for events and view their registrations in a personal dashboard.
-
-### 💻 **Dashboard for Easy Management**
-- **For Organizers:** Manage all created events, update event details, and track participant registrations.
-- **For Participants:** View registered marathons, update details, or cancel participation.
-
-### 📅 **Dynamic Date Handling**
-- Intuitive date pickers for setting registration and event start dates.
-
-### 🔔 **Real-Time Notifications**
-- Get instant feedback with toast notifications for actions like successful event creation, updates, or cancellations.
-
-### 🛡️ **Secure API Integration**
-- Robust backend APIs handle CRUD operations for events, user profiles, and registrations, ensuring data integrity and smooth communication.
-
----
+### 🎯 **Task Creation and Management**
+- **Add Task:** Users can create new tasks by providing a title, description, due date, and category.
+- **Edit Task:** Enable users to modify task details anytime.
+- **Delete Task:** Users can remove tasks that are no longer needed.
+- **Drag-and-Drop Interface:** Allow users to easily move tasks between categories (To-Do, In Progress, Done).
 
 ## ⚛️ React Fundamentals Used
 
@@ -70,47 +53,26 @@ The Marathon Management System is a platform that helps organize marathon events
 ### 🎨 **Tailwind CSS**
 - Stylish and responsive designs for mobile and desktop users.
 
----
-
-## 📝 Usage
-
-### 🔍 **Navigate the Platform**
-- Use the **Navbar** to explore:
-  - **Home**: Overview of the platform.
-  - **All Marathons**: Browse a list of all upcoming events.
-  - **Dashboard**: Manage to add marathon, my marathon list, and my apply list.
-      - **Add Marathon**: Create a new marathon event.
-      - **My Marathon List**: Manage your created events as an organizer.
-      - **My Apply List**: View and manage your registered events as a participant.
 
 
-### 🚀 **Key Actions**
-1. **Explore Events**: Browse upcoming marathons and view details.
-2. **Register**: Sign up for events directly from the details page.
-3. **Create Event**: Organizers can log in to create and manage marathon events.
-4. **Manage Events**: Update or delete events from the dashboard.
-
----
 
 ## 🔗 Dependencies
-- @fortawesome/fontawesome-svg-core: ^6.7.2
-- fortawesome/free-brands-svg-icons: ^6.7.2
-- @fortawesome/free-solid-svg-icons: ^6.7.2
-- @fortawesome/react-fontawesome: ^0.2.2
+- @dnd-kit/core: ^6.3.1
+- @dnd-kit/modifiers: ^9.0.0
+- @dnd-kit/sortable: ^10.0.0
+- @tanstack/react-query: ^5.66.9
 - axios: ^1.7.9
-- firebase: ^11.1.0
+- firebase: ^11.3.1
+- framer-motion: ^12.4.5
 - localforage: ^1.10.0
 - match-sorter: ^8.0.0
-- react": ^18.3.1"
-- react-countdown-circle-timer: ^3.2.1
-- react-datepicker: ^7.5.0
-- react-dom: ^18.3.1
-- react-icons: ^5.4.0
-- react-router-dom: ^7.1.0
-- react-toastify: ^11.0.2
-- react-tooltip: ^5.28.0
+- react: ^19.0.0
+- react-dom: ^19.0.0
+- react-hook-form: ^7.54.2
+- react-icons: ^5.5.0
+- react-router-dom: ^7.2.0
 - sort-by: ^1.2.0
-- sweetalert2: ^11.15.3
+- sweetalert2: ^11.17.2
 
 ## Installation
 - Run `npm install` to install project dependencies.
@@ -124,7 +86,7 @@ Contributions, issues, and feature requests are welcome! Feel free to check out 
 If you like this project, consider giving it a ⭐ on GitHub!
 
 ## 🌐 Live Demo
-✨ **[Experience the Live Version Here!](https://gomarathonbd.web.app)** ✨
+✨ **[Experience the Live Version Here!](https://taskzenorg.firebaseapp.com)** ✨
 
 ## 📂 GitHub Repository
-✨ **[Visit Repository!](https://github.com/elite1122/Marathon-Management-System)** ✨
+✨ **[Visit Repository!](https://github.com/elite1122/TaskZen-Client)** ✨
