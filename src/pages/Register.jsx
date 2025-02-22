@@ -52,7 +52,7 @@ const Register = () => {
                     showConfirmButton: false,
                     timer: 1500,
                 });
-                navigate('/home');
+                navigate('/');
             }
         } catch (error) {
             console.error(error);

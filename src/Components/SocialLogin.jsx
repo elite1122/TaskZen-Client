@@ -1,6 +1,7 @@
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2"; // ✅ Import SweetAlert2
 import useAuth from "../hooks/useAuth";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 
@@ -19,7 +20,10 @@ const SocialLogin = () => {
                 // Upload image to imgbb
                 const formData = new FormData();
                 formData.append("image", user.photoURL);
-                const imgRes = await axios.post(`https://api.imgbb.com/1/upload?key=${imgbbApiKey}`, formData);
+                const imgRes = await axios.post(
+                    `https://api.imgbb.com/1/upload?key=${imgbbApiKey}`,
+                    formData
+                );
 
                 if (imgRes.data.success) {
                     const userInfo = {
@@ -29,11 +33,29 @@ const SocialLogin = () => {
                     };
 
                     await axiosSecure.post("/users", userInfo);
+
+                    // ✅ SweetAlert for successful login
+                    Swal.fire({
+                        title: `Welcome, ${user.displayName}! 🎉`,
+                        text: "You have successfully signed in with Google.",
+                        icon: "success",
+                        timer: 2000,
+                        showConfirmButton: false,
+                        position: "top-end",
+                        timerProgressBar: true,
+                    });
+
                     navigate("/");
                 }
             }
         } catch (error) {
             console.error("Google sign-in error:", error);
+            Swal.fire({
+                title: "Oops!",
+                text: "Google sign-in failed. Please try again.",
+                icon: "error",
+                confirmButtonText: "Okay",
+            });
         }
     };
 

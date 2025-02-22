@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import { IoMdAddCircle, IoMdExit } from "react-icons/io";
 
 const NavBar = () => {
     const { user, logOut, loading } = useAuth();
@@ -11,9 +12,17 @@ const NavBar = () => {
                 </Link>
                 <div className="space-x-4">
                     {user && (
-                        <Link to="signup">
-                            <button onClick={logOut} class="btn btn-error">Logout</button>
-                        </Link>
+                        <>
+                            <Link to="/addTask">
+                                <button className="btn btn-outline text-base"><IoMdAddCircle />Add Task</button>
+                            </Link>
+                            <Link to="/manageTask">
+                                <button className="btn btn-outline text-base">Manage Task</button>
+                            </Link>
+                            <Link to="/signup">
+                                <button onClick={logOut} className="btn btn-error text-white text-base"><IoMdExit /> Logout</button>
+                            </Link>
+                        </>
                     )}
                 </div>
             </div>

@@ -34,10 +34,10 @@ export default function WelcomePage() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1.2 }}
                 >
-                    <Link to="signin">
+                    <Link to="/signin">
                         <button className="btn btn-info">Sign In</button>
                     </Link>
-                    <Link to="signup">
+                    <Link to="/signup">
                         <button className="btn btn-warning">Sign Up</button>
                     </Link>
                 </motion.div>

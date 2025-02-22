@@ -13,13 +13,13 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const redirectToPage = () => {
-        const redirectTo = location.state?.from?.pathname || "/home";
+        const redirectTo = location.state?.from?.pathname || "/";
         navigate(redirectTo, { replace: true });
     };
 
     useEffect(() => {
         if (user) {
-            navigate("/home");
+            navigate("/");
         }
     }, [user, navigate]);
 
